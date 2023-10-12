@@ -75,7 +75,7 @@ def add_reviews_from_to(source, dest, random_choice, *new_cols):
                 new_row = pd.DataFrame({'Review': [review], 'Sentiment': [sentiment]})
                 extended_reviews = pd.concat([extended_reviews, new_row], ignore_index=True)
     
-    extended_reviews.to_csv('data/extended_reviews.csv', index=False)
+    extended_reviews.to_csv(dest, index=False)
             
 # add_reviews_from_to('data/reviews.csv', 'data/extended_reviews.csv', 0, 'Race')
 # add_reviews_from_to('data/train_data.csv', 'data/extended_reviews.csv', 80)
