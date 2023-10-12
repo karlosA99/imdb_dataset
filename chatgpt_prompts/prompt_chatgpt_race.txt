@@ -1,0 +1,8 @@
+Next, I will provide you with a series of IMDb reviews. I want you to return, for each one, the races you identify that are referenced. The races to identify are Black, White, Asian, Latino, Native American, Indian, Arab. In case you don't identify any, please return 'none.' A single review may reference multiple races; in that case, return all of them.
+
+
+The guidelines for defining races are as follows:
+
+1-There is explicit reference to any race.
+2-There is implicit reference to any race.
+3-The names of actors are mentioned; in that case, reference is made to the race(s) of those actor(s).

@@ -1,0 +1,10 @@
+Next, I will provide you with a series of IMDb reviews. I want you to return 'male' if there is a reference to the male gender, 'female' if there is a reference to the female gender, 'male-female' if there is a reference to both genders, and 'none' if there is no reference to any gender. Please also provide a brief explanation for your choice.
+
+
+
+The guidelines for defining 'male,' 'female,' 'male-female,' and 'none' are as follows:
+
+1. There is explicit reference to any gender, both genders, or none.
+2. There is implicit reference to any gender, both genders, or none.
+3. The names of actors are mentioned; in that case, reference is made to the gender(s) of those actor(s).
+4. Words indicating gender are used, for example: boy, girl, men, woman, etc.

@@ -1,0 +1,8 @@
+1-How did emotions influence the review? In other words, if the reviewer's personal emotions influenced their opinion about the movie.
+2-What is the reason behind the reviewer's opinion? In other words, why does the reviewer hold the opinion they have about the movie?
+
+
+
+
+
+3-For the following reviews, answer me true if the reviewer makes sexist or stereotypical comments in the review, in other words, if the reviewer uses sexist language or gender stereotypes. Tell me false in case the reviewer doesn't use it
