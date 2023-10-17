@@ -25,10 +25,15 @@ def int_to_race(number):
     return switcher.get(number, nan)
     
 def list_to_races(numbers):
-    numbers = numbers.split(',')
+    numbers = list(set(numbers.split(',')))
     races_str = ''
-    for n in numbers:
-        races_str += int_to_race(n) + ','
+    
+    if len(numbers) > 1:
+        for n in numbers:
+            races_str += int_to_race(n) + ','
+    else:
+        return int_to_race(numbers[0])
+    
     return races_str[:-1]
 
 #Primero conformamos el nuevo dataset, con los 70 reviews ya anotados y 80 mas.    
