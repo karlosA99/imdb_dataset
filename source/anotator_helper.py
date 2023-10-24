@@ -9,7 +9,7 @@ def int_to_gender(number):
         '1': "Male",
         '2': "Female",
         '3': "Male, Female",
-        '4': nan}
+        '4': "Null"}
     return switcher.get(number, nan)
 
 def int_to_race(number):
@@ -21,7 +21,7 @@ def int_to_race(number):
         '5': 'Native American',
         '6': 'Indian',
         '7': 'Arab',
-        '8': nan}
+        '8': "Null"}
     return switcher.get(number, nan)
     
 def list_to_races(numbers):
@@ -89,7 +89,7 @@ def add_reviews_from_to(source, dest, random_choice, *new_cols):
 def run_annotations():
     annotator_code = input('Ingrese su codigo de anotador: ')
     reviews_path = 'data/extended_reviews.csv'
-    
+
     try:
         annotator_reviews = pd.read_csv(f'data/{annotator_code}_reviews.csv')
     except:
@@ -104,26 +104,23 @@ def run_annotations():
             print('1. Negro, 2. Blanco, 3. Asiatico, 4. Latino, 5. Nativo Americano, 6. Indio, 7. Arabe, 8. No se puede determinar\n')
             print('En caso de determinar la raza de un personaje de ser necesario se debe realizar una busqueda en internet.\n')
         
+
             races = input('Ingrese los numeros correspondientes a las razas separados por comas en caso de ser necesario. Ejemplo: 1,2,3\n')
             print('\n')
             races = list_to_races(races)
             
             annotator_reviews.at[idx, 'Race'] = races
+            annotator_reviews.to_csv(f'data/{annotator_code}_reviews.csv', index=False, mode='w')
+            
             
         if pd.isna(annotator_reviews.loc[idx, 'Gender']):
             #En este caso no esta definido el genero, por lo que hay que anotarlo
-            print('Seleccione el genero que se aprecia en el review anterior: \n')
+            print('Seleccione el genero que se aprecia en el siguiente review: \n')
+            print(row['Review'] + '\n')
             print('1. Solo Masculino, 2. Solo Femenino, 3. Ambos, 4. No se puede determinar\n')
             gender = int_to_gender(input('Ingrese el numero correspondiente: \n'))
             print('\n')
             annotator_reviews.at[idx, 'Gender'] = gender
+            annotator_reviews.to_csv(f'data/{annotator_code}_reviews.csv', index=False, mode='w')
         
-        
-        #print(annotator_reviews)
-        annotator_reviews.to_csv(f'data/{annotator_code}_reviews.csv', index=False, mode='w')
-            
-
-        
-        
-
 run_annotations()
