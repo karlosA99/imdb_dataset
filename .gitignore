@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 data/train_data.csv
 source/how-old-are-you-according-to-a-cnn.ipynb
+data/final_reviews.zip
