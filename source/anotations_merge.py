@@ -1,4 +1,5 @@
 import pandas as pd
+import shutil
 
 empty_revs_path = 'data/extended_reviews.csv'
 
@@ -38,7 +39,7 @@ def get_final_decision(decisions, review):
         print(str(i+1) + ": " + decisions[i])
         
     print("=====================================")
-    choice = input('Choise:')
+    choice = input('Choice:')
     
     try:
         choice = int(choice)-1
@@ -47,7 +48,11 @@ def get_final_decision(decisions, review):
         return None
     
 def merge(*paths):
-    final_reviews = pd.read_csv(empty_revs_path)
+    try:
+        final_reviews = pd.read_csv(f'data/final_reviews.csv')
+    except:
+        shutil.copy2(empty_revs_path, f'data/final_reviews.csv')
+        final_reviews = pd.read_csv(f'data/final_reviews.csv')
     
     datasets = [pd.read_csv(path) for path in paths]
     
@@ -58,7 +63,7 @@ def merge(*paths):
                 final_decision = get_final_decision(decisions, final_reviews.loc[idx, 'Review'])
                 final_reviews.at[idx, 'Gender'] = final_decision
             else:
-                final_reviews.at[idx, 'Gender'] = datasets[0].loc[idx, 'Gender']
+                final_reviews.at[idx, 'Gender'] = decisions[0]
             
         if pd.isna(final_reviews.loc[idx, 'Race']):
             are_equals, decisions = equal_decisions(datasets, idx, 'Race')
@@ -66,4 +71,6 @@ def merge(*paths):
                 final_decision = get_final_decision(decisions, final_reviews.loc[idx, 'Review'])
                 final_reviews.at[idx, 'Race'] = final_decision
             else:
-                final_reviews.at[idx, 'Race'] = datasets[0].loc[idx, 'Race']
+                final_reviews.at[idx, 'Race'] = decisions[0]
+
+merge('data/lauren_reviews.csv', 'data/frank_reviews.csv')
