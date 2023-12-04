@@ -48,7 +48,6 @@ def add_reviews_from_to(source, dest, random_choice, *new_cols):
         *new_cols (str): son columnas nuevas para agregar a dest.
     """
     old_reviews = pd.read_csv(source)
-    print(old_reviews)
     try:
         extended_reviews = pd.read_csv(dest)
     except:
@@ -58,7 +57,6 @@ def add_reviews_from_to(source, dest, random_choice, *new_cols):
         
         extended_reviews = pd.DataFrame(columns=cols_names)
         
-    print(extended_reviews)
     #copiar todo el dataset
     if not random_choice:
         for col in old_reviews:
