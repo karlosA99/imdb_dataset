@@ -36,3 +36,18 @@ def update_chatgpt():
     
     chatgpt_rev.to_csv('data/chatgpt_reviews.csv', index=False, mode='w')
 
+def add_null():
+    chatgpt_rev = pd.read_csv('data/chatgpt_reviews.csv')
+    
+    for idx, row in chatgpt_rev.iterrows():
+        if pd.isna(chatgpt_rev.loc[idx, "Gender"]):
+            chatgpt_rev.at[idx, "Gender"] = 'Null'
+        
+        if pd.isna(chatgpt_rev.loc[idx, "Race"]):
+            chatgpt_rev.at[idx, "Race"] = 'Null'
+    
+    chatgpt_rev.to_csv('data/chatgpt_reviews.csv', index=False, mode='w')
+
+add_null()
+        
+
