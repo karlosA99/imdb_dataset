@@ -5,7 +5,7 @@ from copy import deepcopy
 ds1 = pd.read_csv('data/frank_reviews.csv')
 ds2 = pd.read_csv('data/lauren_reviews.csv')
 ds3 = pd.read_csv('data/final_reviews.csv')
-
+ds4 = pd.read_csv('data/chatgpt_reviews.csv')
 
 #Coeficiente de Jaccard, interseccion/union
 def jaccard_coeff(df1, df2, col):
@@ -67,6 +67,13 @@ frank_lauren = get_statistical_results(ds1, ds2, 'Gender', 'Race')
 frank_final = get_statistical_results(ds1, ds3, 'Gender', 'Race')
 lauren_final = get_statistical_results(ds2, ds3, 'Gender', 'Race')
 
+gpt_frank = get_statistical_results(ds1, ds4, 'Gender', 'Race')
+gpt_lauren = get_statistical_results(ds2, ds4, 'Gender', 'Race')
+gpt_final = get_statistical_results(ds3, ds4, 'Gender', 'Race')
+
 print_data(frank_lauren, 'Frank vs Lauren')
 print_data(frank_final, 'Frank vs Final')
 print_data(lauren_final, 'Lauren vs Final')
+print_data(gpt_frank, 'GPT vs Frank')
+print_data(gpt_lauren, 'GPT vs Lauren')
+print_data(gpt_final, 'GPT vs Final')
