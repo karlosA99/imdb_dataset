@@ -79,4 +79,16 @@ def merge(*paths):
             
             final_reviews.to_csv(final_revs_path, index=False, mode='w')
 
-merge('data/lauren_reviews.csv', 'data/frank_reviews.csv')
+def remove_null(path, *cols):
+    ds = pd.read_csv(path)
+    
+    for idx, row in ds.iterrows():
+        for col in cols:
+            if ds.loc[idx, col] == 'Null':
+                ds.at[idx, col] = ''
+    
+    ds.to_csv(path, index=False, mode='w')
+    
+#merge('data/lauren_reviews.csv', 'data/frank_reviews.csv')
+
+remove_null(final_revs_path, "Gender", "Race")
