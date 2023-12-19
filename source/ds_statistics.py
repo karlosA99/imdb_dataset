@@ -2,7 +2,7 @@ import statistics as st
 import pandas as pd
 from collections import Counter
 
-ds_path = 'data/final_reviews.csv'
+ds_path = 'data/final_reviews_null.csv'
 
 ds = pd.read_csv(ds_path)
 
