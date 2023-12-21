@@ -11,7 +11,7 @@ df = pd.read_csv(data_path)
 def mskf_split_train_test(dataset: pd.DataFrame, col_name: str):
     df_fill = dataset.fillna('Null')
     df_fill['Gender'] = df_fill['Gender'].str.split(', ')
-    df_fill['Race'] = df_fill['Race'].str.split(',')
+    df_fill['Race'] = df_fill['Race'].str.split(', ')
     
     mskf = MultilabelStratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     

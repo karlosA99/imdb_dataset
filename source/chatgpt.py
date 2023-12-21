@@ -48,6 +48,4 @@ def add_null():
     
     chatgpt_rev.to_csv('data/chatgpt_reviews.csv', index=False, mode='w')
 
-add_null()
-        
 

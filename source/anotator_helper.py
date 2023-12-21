@@ -30,7 +30,7 @@ def list_to_races(numbers):
     
     if len(numbers) > 1:
         for n in numbers:
-            races_str += int_to_race(n) + ','
+            races_str += int_to_race(n) + ', '
     else:
         return int_to_race(numbers[0])
     

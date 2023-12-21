@@ -19,7 +19,7 @@ def count_in_race(df: pd.DataFrame):
     count = []
     
     for value in df["Race"].values:
-        value = value.split(",")
+        value = value.split(", ")
         for race in value:
             count.append(race)
     

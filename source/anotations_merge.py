@@ -22,9 +22,9 @@ def sort_race(path):
     
     for idx, row in dataframe.iterrows():
         item = dataframe.loc[idx, 'Race']
-        item = item.split(',')
+        item = item.split(', ')
         item.sort()
-        item = ','.join(item)
+        item = ', '.join(item)
         dataframe.at[idx, 'Race'] = item
     
     dataframe.to_csv(path, index=False, mode='w')
@@ -91,4 +91,4 @@ def remove_null(path, *cols):
     
 #merge('data/lauren_reviews.csv', 'data/frank_reviews.csv')
 
-remove_null(final_revs_path, "Gender", "Race")
+#remove_null(final_revs_path, "Gender", "Race")

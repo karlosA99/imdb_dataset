@@ -12,8 +12,8 @@ def jaccard_coeff(df1, df2, col):
     agreements = []
     
     for idx, row in df1.iterrows():
-        intersection = len(set(df1.loc[idx, col].split(',')) & set(df2.loc[idx, col].split(',')))
-        union = len(set(df1.loc[idx, col].split(',') + df2.loc[idx, col].split(',')))
+        intersection = len(set(df1.loc[idx, col].split(', ')) & set(df2.loc[idx, col].split(', ')))
+        union = len(set(df1.loc[idx, col].split(', ') + df2.loc[idx, col].split(', ')))
         agreements.append(intersection/union)
     
     return agreements
@@ -33,8 +33,8 @@ def micro_agreement(df1, df2, *cols):
     df2_copy['Union'] = df2_copy[cols[0]]
     
     for i in range(1, len(cols)):
-        df1_copy['Union'] = df1_copy['Union'] + ',' + df1_copy[cols[i]]
-        df2_copy['Union'] = df2_copy['Union'] + ',' + df2_copy[cols[i]]
+        df1_copy['Union'] = df1_copy['Union'] + ', ' + df1_copy[cols[i]]
+        df2_copy['Union'] = df2_copy['Union'] + ', ' + df2_copy[cols[i]]
 
     agreements = jaccard_coeff(df1_copy, df2_copy, 'Union')
     return agreements
