@@ -6,6 +6,21 @@ ds1 = pd.read_csv('data/frank_reviews.csv')
 ds2 = pd.read_csv('data/lauren_reviews.csv')
 ds3 = pd.read_csv('data/final_reviews.csv')
 ds4 = pd.read_csv('data/chatgpt_reviews.csv')
+ds5 = pd.read_csv('data/final_reviews_null.csv')
+
+def change_race_spliter(df: pd.DataFrame, save_path):
+    for idx, row in df.iterrows():
+        if not pd.isna(df.loc[idx, 'Race']):
+            races = df.loc[idx, 'Race'].split(',')
+            races = ', '.join(races)
+            df.at[idx, 'Race'] = races
+    
+    df.to_csv(save_path, index=False, mode='w')
+
+#change_race_spliter(ds1, 'data/frank_reviews.csv')
+#change_race_spliter(ds2, 'data/lauren_reviews.csv')
+#change_race_spliter(ds3, 'data/final_reviews.csv')
+change_race_spliter(ds5, 'data/final_reviews_null.csv')
 
 #Coeficiente de Jaccard, interseccion/union
 def jaccard_coeff(df1, df2, col):
