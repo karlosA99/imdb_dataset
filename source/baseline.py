@@ -17,7 +17,7 @@ data_path = 'data/final_reviews.csv'
 embeddings_path = 'data/embeddings.csv'
 
 origin_df = pd.read_csv(data_path)
-embeddings_df = pd.read_csv(embeddings_path)
+#embeddings_df = pd.read_csv(embeddings_path)
 
 def get_embeddings_bert(df: pd.DataFrame):
     model_name = 'bert-large-cased'
@@ -41,14 +41,16 @@ def get_embeddings_bert(df: pd.DataFrame):
             for chunk in chunked_tokens:
                 with torch.no_grad():
                     outputs = model(input_ids = chunk)
-                    chunk_embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().tolist()
+                    chunk_embeddings = outputs.pooler_output
+                    chunk_embeddings = chunk_embeddings.squeeze().tolist()
                     embeddings.append(chunk_embeddings)
-        
             embedding = torch.tensor(embeddings).mean(dim=0).tolist()
         else:
             with torch.no_grad():
                 outputs = model(**tokens)
-                embedding = outputs.last_hidden_state.mean(dim=1).squeeze().tolist()
+                embedding = outputs.pooler_output
+                embedding = embedding.squeeze().tolist() 
+                
         
         
         embed_df.at[idx, 'Embedding'] = str(embedding)
@@ -117,14 +119,16 @@ def remove_unique_indiv(dataset: pd.DataFrame, col_name: str):
     
     return unique_indivs, non_unique_indivs
 
+get_embeddings_bert(origin_df)
+
 learner1 = LogisticRegression(max_iter=1000)
 learner2 = RandomForestClassifier(n_estimators=100)
 learner3 = SVC()
 learner4 = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000)
 learners = [learner1, learner2, learner3, learner4]
 
-for learner in learners:
-    f1, acc, prec, rec = classifier_fit(embeddings_df, 'Gender', learner)
-    print(learner.__class__.__name__)
-    print(f'F1 Score: {f1}', f'Accuracy: {acc}', f'Precision: {prec}', f'Recall: {rec}')
-    print("*********************************************************************************")
+# for learner in learners:
+#     f1, acc, prec, rec = classifier_fit(embeddings_df, 'Gender', learner)
+#     print(learner.__class__.__name__)
+#     print(f'F1 Score: {f1}', f'Accuracy: {acc}', f'Precision: {prec}', f'Recall: {rec}')
+#     print("*********************************************************************************")
