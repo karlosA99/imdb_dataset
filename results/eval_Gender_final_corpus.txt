@@ -1,0 +1,112 @@
+Bert model: bert-base-uncased
+Learner: LogisticRegression
+F1-score: 0.7604
+Accuracy: 0.4933
+Precision: 0.7358
+Recall: 0.7937
+
+Bert model: bert-base-uncased
+Learner: RandomForestClassifier
+F1-score: 0.7566
+Accuracy: 0.4667
+Precision: 0.7065
+Recall: 0.8204
+
+Bert model: bert-base-uncased
+Learner: SVC
+F1-score: 0.7609
+Accuracy: 0.4533
+Precision: 0.6713
+Recall: 0.8804
+
+Bert model: bert-base-uncased
+Learner: MLPClassifier
+F1-score: 0.7459
+Accuracy: 0.4667
+Precision: 0.7227
+Recall: 0.7774
+
+Bert model: bert-base-cased
+Learner: LogisticRegression
+F1-score: 0.7436
+Accuracy: 0.4667
+Precision: 0.7132
+Recall: 0.7787
+
+Bert model: bert-base-cased
+Learner: RandomForestClassifier
+F1-score: 0.6865
+Accuracy: 0.4133
+Precision: 0.6629
+Recall: 0.713
+
+Bert model: bert-base-cased
+Learner: SVC
+F1-score: 0.766
+Accuracy: 0.4267
+Precision: 0.6209
+Recall: 1.0
+
+Bert model: bert-base-cased
+Learner: MLPClassifier
+F1-score: 0.7426
+Accuracy: 0.5
+Precision: 0.7409
+Recall: 0.7515
+
+Bert model: bert-large-uncased
+Learner: LogisticRegression
+F1-score: 0.7504
+Accuracy: 0.4467
+Precision: 0.7144
+Recall: 0.7945
+
+Bert model: bert-large-uncased
+Learner: RandomForestClassifier
+F1-score: 0.7317
+Accuracy: 0.4333
+Precision: 0.6937
+Recall: 0.7825
+
+Bert model: bert-large-uncased
+Learner: SVC
+F1-score: 0.7628
+Accuracy: 0.42
+Precision: 0.6167
+Recall: 1.0
+
+Bert model: bert-large-uncased
+Learner: MLPClassifier
+F1-score: 0.677
+Accuracy: 0.3933
+Precision: 0.6914
+Recall: 0.6843
+
+Bert model: bert-large-cased
+Learner: LogisticRegression
+F1-score: 0.7524
+Accuracy: 0.48
+Precision: 0.7143
+Recall: 0.7993
+
+Bert model: bert-large-cased
+Learner: RandomForestClassifier
+F1-score: 0.7077
+Accuracy: 0.4133
+Precision: 0.6973
+Recall: 0.7239
+
+Bert model: bert-large-cased
+Learner: SVC
+F1-score: 0.7379
+Accuracy: 0.4267
+Precision: 0.6463
+Recall: 0.8638
+
+Bert model: bert-large-cased
+Learner: MLPClassifier
+F1-score: 0.7383
+Accuracy: 0.4667
+Precision: 0.7226
+Recall: 0.7622
+
