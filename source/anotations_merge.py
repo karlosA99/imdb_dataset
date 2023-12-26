@@ -91,4 +91,5 @@ def remove_null(path, *cols):
     
 #merge('data/lauren_reviews.csv', 'data/frank_reviews.csv')
 
-#remove_null(final_revs_path, "Gender", "Race")
+#remove_null('data/lauren_reviews.csv', "Gender", "Race")
+#remove_null('data/frank_reviews.csv', 'Gender', 'Race')
