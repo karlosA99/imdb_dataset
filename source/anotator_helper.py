@@ -34,7 +34,7 @@ def list_to_races(numbers):
     else:
         return int_to_race(numbers[0])
     
-    return races_str[:-1]
+    return races_str[:-2]
 
 #Primero conformamos el nuevo dataset, con los 70 reviews ya anotados y 80 mas.    
 def add_reviews_from_to(source, dest, random_choice, *new_cols):

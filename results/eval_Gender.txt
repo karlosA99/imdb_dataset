@@ -1,0 +1,240 @@
+Bert model: bert-base-uncased - Learner: FrankModel
+Accuracy: 0.9133
+Macro_Accuracy: 0.8722
+Micro_F1-score: 0.9664
+Macro_F1-score: 0.9669
+Micro_Precision: 0.9354
+Macro_Precision: 0.9366
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-base-uncased - Learner: LaurenModel
+Accuracy: 0.9467
+Macro_Accuracy: 0.9574
+Micro_F1-score: 0.9706
+Macro_F1-score: 0.9714
+Micro_Precision: 1.0
+Macro_Precision: 1.0
+Micro_Recall: 0.945
+Macro_Recall: 0.9467
+
+Bert model: bert-base-uncased - Learner: LogisticRegression
+Accuracy: 0.4933
+Macro_Accuracy: 0.366
+Micro_F1-score: 0.7604
+Macro_F1-score: 0.7571
+Micro_Precision: 0.7358
+Macro_Precision: 0.74
+Micro_Recall: 0.7937
+Macro_Recall: 0.7888
+
+Bert model: bert-base-uncased - Learner: RandomForestClassifier
+Accuracy: 0.4333
+Macro_Accuracy: 0.3081
+Micro_F1-score: 0.7439
+Macro_F1-score: 0.7367
+Micro_Precision: 0.6811
+Macro_Precision: 0.6769
+Micro_Recall: 0.8307
+Macro_Recall: 0.8225
+
+Bert model: bert-base-uncased - Learner: SVC
+Accuracy: 0.4533
+Macro_Accuracy: 0.3015
+Micro_F1-score: 0.7609
+Macro_F1-score: 0.7486
+Micro_Precision: 0.6713
+Macro_Precision: 0.6713
+Micro_Recall: 0.8804
+Macro_Recall: 0.8665
+
+Bert model: bert-base-uncased - Learner: MLPClassifier
+Accuracy: 0.48
+Macro_Accuracy: 0.3748
+Micro_F1-score: 0.7555
+Macro_F1-score: 0.7482
+Micro_Precision: 0.7285
+Macro_Precision: 0.7252
+Micro_Recall: 0.7887
+Macro_Recall: 0.7823
+
+Bert model: bert-base-cased - Learner: FrankModel
+Accuracy: 0.9133
+Macro_Accuracy: 0.8722
+Micro_F1-score: 0.9664
+Macro_F1-score: 0.9669
+Micro_Precision: 0.9354
+Macro_Precision: 0.9366
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-base-cased - Learner: LaurenModel
+Accuracy: 0.9467
+Macro_Accuracy: 0.9574
+Micro_F1-score: 0.9706
+Macro_F1-score: 0.9714
+Micro_Precision: 1.0
+Macro_Precision: 1.0
+Micro_Recall: 0.945
+Macro_Recall: 0.9467
+
+Bert model: bert-base-cased - Learner: LogisticRegression
+Accuracy: 0.4667
+Macro_Accuracy: 0.3555
+Micro_F1-score: 0.7436
+Macro_F1-score: 0.7317
+Micro_Precision: 0.7132
+Macro_Precision: 0.7071
+Micro_Recall: 0.7787
+Macro_Recall: 0.7682
+
+Bert model: bert-base-cased - Learner: RandomForestClassifier
+Accuracy: 0.4067
+Macro_Accuracy: 0.2998
+Micro_F1-score: 0.703
+Macro_F1-score: 0.6941
+Micro_Precision: 0.6728
+Macro_Precision: 0.6734
+Micro_Recall: 0.7394
+Macro_Recall: 0.7302
+
+Bert model: bert-base-cased - Learner: SVC
+Accuracy: 0.4267
+Macro_Accuracy: 0.2571
+Micro_F1-score: 0.766
+Macro_F1-score: 0.7641
+Micro_Precision: 0.6209
+Macro_Precision: 0.6207
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-base-cased - Learner: MLPClassifier
+Accuracy: 0.4667
+Macro_Accuracy: 0.3866
+Micro_F1-score: 0.7406
+Macro_F1-score: 0.7314
+Micro_Precision: 0.7318
+Macro_Precision: 0.7263
+Micro_Recall: 0.751
+Macro_Recall: 0.7428
+
+Bert model: bert-large-uncased - Learner: FrankModel
+Accuracy: 0.9133
+Macro_Accuracy: 0.8722
+Micro_F1-score: 0.9664
+Macro_F1-score: 0.9669
+Micro_Precision: 0.9354
+Macro_Precision: 0.9366
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-large-uncased - Learner: LaurenModel
+Accuracy: 0.9467
+Macro_Accuracy: 0.9574
+Micro_F1-score: 0.9706
+Macro_F1-score: 0.9714
+Micro_Precision: 1.0
+Macro_Precision: 1.0
+Micro_Recall: 0.945
+Macro_Recall: 0.9467
+
+Bert model: bert-large-uncased - Learner: LogisticRegression
+Accuracy: 0.4467
+Macro_Accuracy: 0.3655
+Micro_F1-score: 0.7504
+Macro_F1-score: 0.7412
+Micro_Precision: 0.7144
+Macro_Precision: 0.7067
+Micro_Recall: 0.7945
+Macro_Recall: 0.7873
+
+Bert model: bert-large-uncased - Learner: RandomForestClassifier
+Accuracy: 0.4333
+Macro_Accuracy: 0.343
+Micro_F1-score: 0.7206
+Macro_F1-score: 0.6993
+Micro_Precision: 0.6909
+Macro_Precision: 0.6667
+Micro_Recall: 0.7663
+Macro_Recall: 0.7537
+
+Bert model: bert-large-uncased - Learner: SVC
+Accuracy: 0.42
+Macro_Accuracy: 0.25
+Micro_F1-score: 0.7628
+Macro_F1-score: 0.7609
+Micro_Precision: 0.6167
+Macro_Precision: 0.6167
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-large-uncased - Learner: MLPClassifier
+Accuracy: 0.4667
+Macro_Accuracy: 0.4042
+Micro_F1-score: 0.7419
+Macro_F1-score: 0.725
+Micro_Precision: 0.7316
+Macro_Precision: 0.7154
+Micro_Recall: 0.7562
+Macro_Recall: 0.7477
+
+Bert model: bert-large-cased - Learner: FrankModel
+Accuracy: 0.9133
+Macro_Accuracy: 0.8722
+Micro_F1-score: 0.9664
+Macro_F1-score: 0.9669
+Micro_Precision: 0.9354
+Macro_Precision: 0.9366
+Micro_Recall: 1.0
+Macro_Recall: 1.0
+
+Bert model: bert-large-cased - Learner: LaurenModel
+Accuracy: 0.9467
+Macro_Accuracy: 0.9574
+Micro_F1-score: 0.9706
+Macro_F1-score: 0.9714
+Micro_Precision: 1.0
+Macro_Precision: 1.0
+Micro_Recall: 0.945
+Macro_Recall: 0.9467
+
+Bert model: bert-large-cased - Learner: LogisticRegression
+Accuracy: 0.48
+Macro_Accuracy: 0.3659
+Micro_F1-score: 0.7524
+Macro_F1-score: 0.7443
+Micro_Precision: 0.7143
+Macro_Precision: 0.7127
+Micro_Recall: 0.7993
+Macro_Recall: 0.7901
+
+Bert model: bert-large-cased - Learner: RandomForestClassifier
+Accuracy: 0.4333
+Macro_Accuracy: 0.3189
+Micro_F1-score: 0.7158
+Macro_F1-score: 0.7051
+Micro_Precision: 0.6915
+Macro_Precision: 0.6821
+Micro_Recall: 0.7451
+Macro_Recall: 0.7352
+
+Bert model: bert-large-cased - Learner: SVC
+Accuracy: 0.4267
+Macro_Accuracy: 0.2753
+Micro_F1-score: 0.7379
+Macro_F1-score: 0.7219
+Micro_Precision: 0.6463
+Macro_Precision: 0.6388
+Micro_Recall: 0.8638
+Macro_Recall: 0.8482
+
+Bert model: bert-large-cased - Learner: MLPClassifier
+Accuracy: 0.4667
+Macro_Accuracy: 0.3449
+Micro_F1-score: 0.7511
+Macro_F1-score: 0.7464
+Micro_Precision: 0.7088
+Macro_Precision: 0.7064
+Micro_Recall: 0.804
+Macro_Recall: 0.7996
+
