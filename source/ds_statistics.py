@@ -24,11 +24,20 @@ def count_in_race(df: pd.DataFrame):
             count.append(race)
     
     return Counter(count)
-    
+
+def mean_texts_size(df: pd.DataFrame):
+    texts_size = []
+    for text in df["Review"]:
+        text = text.split()
+        texts_size.append(len(text))
+
+    return st.mean(texts_size)
 
 count_race = count_in_race(ds)
 count_gender = count_in_gender(ds)
 
+#Media de Tamaño de los Textos 
+print("Media de tamaño de los textos:", mean_texts_size(ds))
 #Total de reviews
 total = ds.shape[0]
 print("Total de reviews:", total)

@@ -13,7 +13,7 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold
 from transformers import BertTokenizer, BertModel
 import torch
 from copy import deepcopy
-
+from fairness_evaluation import *
 
 class Model:
     def __init__(self, dataframe) -> None:
@@ -180,6 +180,19 @@ def macro_accuracy(y_true, y_pred):
     
 #     return np.mean(classes_accuracies)
 
+def reverse_binarization(y_pred_item, attr):
+    pred = []
+    if attr == "Gender":
+        if y_pred_item[1]:
+            pred.append("Male")
+        if y_pred_item[0]:
+            pred.append("Female")
+        return ', '.join(pred)
+    if attr == "Race":
+        pass
+    
+    raise Exception("Incorrect attribute")
+    
 def classifier_fit(train_dataset: pd.DataFrame, col_name: str, learner):
     X, y, mskf = get_sets_mskf(train_dataset, col_name)
     
@@ -207,6 +220,9 @@ def classifier_fit(train_dataset: pd.DataFrame, col_name: str, learner):
     macro_precision_scores = []
     micro_recall_scores = []
     macro_recall_scores = []
+    fairness_scores = {}
+    
+    fold = 1
     
     for train_index, test_index in mskf.split(X, y):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
@@ -233,6 +249,22 @@ def classifier_fit(train_dataset: pd.DataFrame, col_name: str, learner):
         macro_f1_scores.append(f1_score(y_test, y_pred, average='macro'))
         macro_precision_scores.append(precision_score(y_test, y_pred, average='macro'))
         macro_recall_scores.append(recall_score(y_test, y_pred, average='macro'))
+        
+        # Fairness scores
+        auto_annotated = origin_df.copy()
+
+        for i, idx in enumerate(test_index):
+            prediction = reverse_binarization(y_pred[i], col_name)
+            auto_annotated.at[idx, col_name] = prediction
+            
+        stat_parity = statistical_parity(data=auto_annotated, protected_attribute=col_name)
+        fairness_scores[('Statistical Parity', learner, f"Fold: {fold}")] = stat_parity
+        
+        equal_opp = equal_opportunity(data=auto_annotated, protected_attribute=col_name)
+        
+        fold += 1 
+    
+    print("FAIRNESS_SCORES", fairness_scores)    
         
     to_return = ((np.mean(accuracy_scores), np.mean(macro_accuracy_scores)), 
                 (np.mean(micro_f1_scores), np.mean(macro_f1_scores)), 
@@ -282,6 +314,7 @@ if __name__ == '__main__':
     
     # BERT models names
     bert_model_names = ['bert-base-uncased', 'bert-base-cased', 'bert-large-uncased', 'bert-large-cased']
+    bert_model_names = ['bert-large-uncased']
 
     # Read datasets
     origin_df = pd.read_csv(data_path)
@@ -295,7 +328,7 @@ if __name__ == '__main__':
     learner4 = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=1000)
     frank_model = FrankModel(frank_df)
     lauren_model = LaurenModel(lauren_df)
-    learners = [frank_model, lauren_model, learner1, learner2, learner3, learner4]
+    learners = [learner4]
     
     cols = ['Gender', 'Race']
     for col in cols:
